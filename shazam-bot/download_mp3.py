@@ -1,7 +1,8 @@
 import logging
 
 import yt_dlp
-from youtube_dl_utils import YoutubeDlLogger, my_hook, OUTPUT_TEMPLATE
+from youtube_dl_utils import OUTPUT_TEMPLATE, YoutubeDlLogger, my_hook
+
 
 def download_mp3(youtube_url):
     YDL_OPTIONS = {
@@ -23,4 +24,4 @@ def download_mp3(youtube_url):
     with yt_dlp.YoutubeDL(YDL_OPTIONS) as ydl:
         ydl.download([youtube_url])
 
-        logging.info("a")
+        logging.info("done downloading and converting")
